@@ -8,7 +8,7 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      const res = await fetch("http://localhost:3002/api/auth/login", {
+      const res = await fetch("https://zerodha-trading-clone-1.onrender.com/api/auth/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password })
@@ -23,7 +23,7 @@ const Login = () => {
         alert("Login successful! Redirecting to dashboard...");
 
         // ✅ Full redirect to the dashboard running on port 3001
-        window.location.href = "http://localhost:3001";
+        window.location.href = "https://zerodha-trading-clone-1.onrender.com";
       } else {
         alert(data.msg || "Login failed. Check credentials.");
       }

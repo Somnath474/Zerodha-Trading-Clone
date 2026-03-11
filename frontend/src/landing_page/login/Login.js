@@ -15,7 +15,7 @@ const Login = () => {
     setLoading(true);
 
     try {
-      const res = await fetch("http://localhost:3002/api/auth/login", {
+      const res = await fetch("https://zerodha-trading-clone-1.onrender.com/api/auth/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),
@@ -25,7 +25,7 @@ const Login = () => {
 
       if (res.ok) {
         // ✅ Pass token via URL to dashboard (cross-port localStorage fix)
-        window.location.href = `http://localhost:3001?token=${data.token}`;
+        window.location.href = `https://zerodha-trading-clone-1.onrender.com?token=${data.token}`;
       } else {
         setError(data.msg || "Login failed. Please try again.");
       }

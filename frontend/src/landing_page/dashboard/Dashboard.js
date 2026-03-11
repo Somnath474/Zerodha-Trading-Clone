@@ -15,7 +15,7 @@ const Dashboard = () => {
 
     const fetchHoldings = async () => {
       try {
-        const res = await fetch("http://localhost:3002/allHoldings", {
+        const res = await fetch("https://zerodha-trading-clone-1.onrender.com/allHoldings", {
           headers: { Authorization: `Bearer ${token}` } // ✅ Bearer added
         });
 
