@@ -1,0 +1,329 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+/* ───── LAYOUT ───── */
+.auth-page {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* ───── LEFT PANEL ───── */
+.auth-left {
+  flex: 1;
+  background: linear-gradient(135deg, #387ed1 0%, #1a5fa8 60%, #0f3d7a 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 60px;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.auth-left::before {
+  content: '';
+  position: absolute;
+  top: -80px;
+  right: -80px;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.06);
+}
+
+.auth-left::after {
+  content: '';
+  position: absolute;
+  bottom: -60px;
+  left: -60px;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.04);
+}
+
+.brand {
+  margin-bottom: 48px;
+}
+
+.brand-logo {
+  width: 52px;
+  margin-bottom: 12px;
+  filter: brightness(0) invert(1);
+}
+
+.brand h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  margin-bottom: 6px;
+}
+
+.brand p {
+  font-size: 1rem;
+  opacity: 0.8;
+  font-weight: 300;
+}
+
+/* Stats row */
+.brand-stats {
+  display: flex;
+  gap: 32px;
+}
+
+.stat h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.stat p {
+  font-size: 0.78rem;
+  opacity: 0.7;
+  margin-top: 2px;
+}
+
+/* Features list */
+.brand-features {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.brand-features li {
+  font-size: 0.95rem;
+  opacity: 0.9;
+  font-weight: 400;
+}
+
+/* ───── RIGHT PANEL ───── */
+.auth-right {
+  flex: 1;
+  background: #f8f9fb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+.auth-card {
+  background: white;
+  border-radius: 16px;
+  padding: 44px 40px;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
+}
+
+.auth-card h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-bottom: 6px;
+}
+
+.auth-subtitle {
+  color: #888;
+  font-size: 0.9rem;
+  margin-bottom: 28px;
+}
+
+/* ───── ALERTS ───── */
+.auth-error {
+  background: #fff2f2;
+  border: 1px solid #ffcdd2;
+  color: #c62828;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.auth-success {
+  background: #f0faf4;
+  border: 1px solid #c8e6c9;
+  color: #2e7d32;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ───── FORM ───── */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #444;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.form-group input {
+  padding: 12px 14px;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  color: #1a1a2e;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  outline: none;
+  font-family: 'Inter', sans-serif;
+}
+
+.form-group input:focus {
+  border-color: #387ed1;
+  box-shadow: 0 0 0 3px rgba(56, 126, 209, 0.12);
+}
+
+/* Password show/hide */
+.password-wrapper {
+  position: relative;
+}
+
+.password-wrapper input {
+  width: 100%;
+  padding-right: 60px;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #387ed1;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Password strength */
+.password-strength {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.strength-bar {
+  height: 4px;
+  border-radius: 4px;
+  flex: 1;
+  transition: background 0.3s;
+}
+
+.strength-bar.weak   { background: #ef5350; width: 33%; }
+.strength-bar.medium { background: #ff9800; width: 66%; }
+.strength-bar.strong { background: #4caf50; width: 100%; }
+
+.password-strength span {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #666;
+}
+
+/* ───── BUTTON ───── */
+.btn-primary {
+  padding: 13px;
+  background: #387ed1;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: #2d6bbf;
+  transform: translateY(-1px);
+}
+
+.btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Loading spinner */
+.spinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  display: inline-block;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ───── SWITCH LINK ───── */
+.auth-switch {
+  text-align: center;
+  font-size: 0.88rem;
+  color: #777;
+  margin-top: 22px;
+}
+
+.auth-switch a {
+  color: #387ed1;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.auth-switch a:hover {
+  text-decoration: underline;
+}
+
+/* ───── RESPONSIVE ───── */
+@media (max-width: 768px) {
+  .auth-left {
+    display: none;
+  }
+
+  .auth-right {
+    padding: 24px;
+  }
+
+  .auth-card {
+    padding: 30px 24px;
+    box-shadow: none;
+  }
+}

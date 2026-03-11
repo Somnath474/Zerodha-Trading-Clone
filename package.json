@@ -1,0 +1,27 @@
+{
+  "dependencies": {
+    "concurrently": "^9.2.1"
+  },
+  "name": "stock-trading-platform-1",
+  "version": "1.0.0",
+  "description": "Zerodha",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+  "start": "concurrently \"npm run frontend\" \"npm run backend\" \"npm run dashboard\"",
+  "frontend": "cd frontend && npm start",
+  "backend": "cd backend && npm run dev",
+  "dashboard": "cd dashboard && npm start"
+},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Somnath474/Stock-Trading-Platform.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Somnath474/Stock-Trading-Platform/issues"
+  },
+  "homepage": "https://github.com/Somnath474/Stock-Trading-Platform#readme"
+}
